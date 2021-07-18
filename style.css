@@ -1,0 +1,13 @@
+button{
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+button:hover{
+    background-color: blue;
+    color: white;
+}
+
+form{
+    display: flex;
+}

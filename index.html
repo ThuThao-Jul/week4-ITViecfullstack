@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITViec</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="index.html" class="nav-link px-2 text-white">Home</a></li>
+          <!-- <li><a href="#" class="nav-link px-2 text-white">Features</a></li> -->
+          <li><a href="#" class="nav-link px-2 text-white">Hot jobs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Hot companies</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form id="signinForm" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="email" class="form-control form-control-dark" placeholder="john@gmail.com" aria-label="email">
+          <input id="password" type="password" class="form-control form-control-dark" placeholder="******" aria-label="password">
+          <button type="submit" class="btn btn-outline-light me-2">Login</button>
+          <button id="signout" type="button" class="btn btn-outline-light me-2 btn-danger">Logout</button>
+        </form>
+
+        <div  class="text-end">
+          <!-- <button type="submit" class="btn btn-outline-light me-2">Login</button> -->
+          <button type="button" class="btn btn-warning">Sign-up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container">
+
+    
+
+
+    <section class="section2">
+    <!-- <h1 id="title" class="text-center"> ITViec</h1> -->
+
+    <div class="px-4 py-5 my-5 text-center" style="background-color: #B2B1B9;">
+      <!-- <img class="d-block mx-auto mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+      <h1 class="display-5 fw-bold">ITViec</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Create a new job
+            </button>
+          
+        </div>
+      </div>
+    </div>
+
+     <!--Create form-->
+     <div class="collapse mb-5" id="collapseExample">
+      <div class="card card-body" id ="jobCreate">
+        <form  style="display: block;">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input id="titleCreate" type="text" class="form-control"  >
+          </div>
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input id="cityCreate" type="text" class="form-control" >
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+    </div>
+
+    
+    <div class="btn-group" style="width: 20%; align-items:baseline;">
+      <p style="margin-right: 10%;">Sort by:</p>
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Jobs 
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="companies.html">Companies</a></li>
+      </ul>
+    </div>
+
+    <!--Filter-->
+    <a class="btn btn-primary mb-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="display: block; width: 20%;">
+      Filter
+    </a>
+  
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filter </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <form style="display: block;">
+          <div id="filter" class="mb-3">
+            <label for="jobTitle" class="form-label">Title</label>
+            <input type="text" class="form-control" id="jobTitle" aria-describedby="jobTitle">
+          </div>
+          <div class="mb-3">
+            <label for="jobCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="jobCity">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+      </div>
+  
+
+   
+    
+    <div class="content">
+      
+        <div id="jobList" class="row row-cols-1 row-cols-md-3 g-4"></div>
+      
+        
+    </div>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-end">
+        <li class="page-item">
+          <a type="button" class="page-link" id="previous" >Previous</a>
+        </li>
+        <li class="page-item"><div id="page" class="page-link"></div></li>
+        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+        <li class="page-item">
+          <a type="button" class="page-link" id="next">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    </section>
+
+
+  <script src="./jobs.js"></script>
+  <script src="./identification.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>      
+
+</body>
+</html>
